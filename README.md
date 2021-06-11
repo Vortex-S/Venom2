@@ -4,3 +4,4 @@
 - CSS
 - JavaScript
 - Normalize CSS
+- Fancybox
