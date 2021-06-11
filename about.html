@@ -21,6 +21,14 @@ document.write('<script src="http://' + (location.host || 'localhost').split(':'
                 <img width="46" height="71" src="img/logo.png" alt="logo: Venom" class="logo-image">
             </a>
             <nav class="nav">
+                <button class="menu-button">
+                    <span class="menu-button-text">меню</span>
+                    <img src="img/menu.svg" alt="icon: burger menu" class="menu-button-icon">
+                </button>
+                <button class="menu-close">
+                    <span class="menu-close-text">Закрыть</span>
+                    <img src="img/arrow.svg" alt="icon: arrow right" class="menu-close-item">
+                </button>
                 <ul class="nav-menu">
                     <li class="nav-menu-item"><a href="about.html" class="nav-menu-link">о фильме</a></li>
                     <li class="nav-menu-item"><a href="trailer.html" class="nav-menu-link">трейлер</a></li>
@@ -47,7 +55,7 @@ document.write('<script src="http://' + (location.host || 'localhost').split(':'
                     <li class="list-item">Пегги Лу</li>
                 </ul>
                 <div class="trailer">
-                    <button class="play">
+                    <button data-fancybox href="https://www.youtube.com/watch?v=Othd8W8o3t0" class="play">
                         <img src="img/play.svg" alt="icon: play" class="play-icon">
                     </button>
                 </div>
@@ -55,27 +63,31 @@ document.write('<script src="http://' + (location.host || 'localhost').split(':'
             <div class="col ">
                 <div class="poster-wrapper">
                     <img src="img/poster.jpg" alt="photo: poster" class="poster">
-                <div class="creators">
-                    <h3 class="content-subtitle">Режиссер</h3>
-                    <ul class="list">
-                        <li class="list-item">Энди Серкис</li>
-                    </ul>
-                     <h3 class="content-subtitle">Сценарий</h3>
-                    <ul class="list">
-                        <li class="list-item">Келли Марсел</li>
-                        <li class="list-item">Том Харди</li>
-                    </ul>
-                    <h3 class="content-subtitle">Продюсеры</h3>
-                    <ul class="list">
-                        <li class="list-item">Ави Арад</li>
-                        <li class="list-item">Том Харди</li>
-                        <li class="list-item">Келли Марсел</li>
-                    </ul>
-                </div>
+                    <div class="creators">
+                        <h3 class="content-subtitle">Режиссер</h3>
+                        <ul class="list">
+                            <li class="list-item">Энди Серкис</li>
+                        </ul>
+                        <h3 class="content-subtitle">Сценарий</h3>
+                        <ul class="list">
+                            <li class="list-item">Келли Марсел</li>
+                            <li class="list-item">Том Харди</li>
+                        </ul>
+                        <h3 class="content-subtitle">Продюсеры</h3>
+                        <ul class="list">
+                            <li class="list-item">Ави Арад</li>
+                            <li class="list-item">Том Харди</li>
+                            <li class="list-item">Келли Марсел</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -4,9 +4,22 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+img {
+	max-width: 100%;
+}
+
 .container {
 	max-width: 1140px;
+	width: 90%;
 	margin: auto;
+}
+
+.venom {
+	position: absolute;
+	right: 0;
+	top: 0;
+	max-width: 728px;
+	width: 40%; /* чем меньше ширина, тем меньше сам Веном, он не будет больше 728px, но будет уменьшаться */
 }
 
 .header {
@@ -41,16 +54,20 @@ body {
 	display: block; /* сделать строковый блок блочным, чтобы выделить ему отдельную строку */
 	font-size: 24px;
 	line-height: 28px;
-	margin-bottom: 38px;
+	margin-bottom: 2%;
 	color: rgba(255, 255, 255, 0.8);
 }
 
 .film-description {
-	margin-top: 40px;
+	margin-top: 3%;
 	max-width: 423px;
 	font-size: 16px;
 	line-height: 140%;
 	color: rgba(255, 255, 255, 0.8);
+}
+
+.film-logo {
+	width: 70%;
 }
 
 .button {
@@ -82,17 +99,11 @@ body {
 }
 
 .button-group {
-	margin-top: 70px;
+	margin-top: 5%;
 }
 
-.venom {
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-
-.blood {
-	background: url("../img/blood.png") no-repeat top right, #14131A url("../img/background.jpg") no-repeat center center /100%;
+.blood { /* картинки не повторять, выровнять, задать размер */
+	background: url("../img/blood.png") no-repeat top right /70%, #14131A url("../img/background.jpg") no-repeat center center /100%;
 }
 
 .primary-bg {
@@ -113,6 +124,7 @@ body {
 	line-height: 42px;
 	color: rgba(255, 255, 255, 0.8);
 	margin-bottom: 20px;
+	margin-top: -10px;
 }
 
 .content-text {
@@ -160,6 +172,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	margin-top: 33px;
+	margin-bottom: 125px;
 }
 
 .trailer .play {
@@ -188,4 +201,134 @@ body {
 .poster-wrapper .list {
 	margin: 0;
 	margin-bottom: 20px;
+}
+
+.menu-button {
+	display: none;
+}
+
+.menu-close {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.blood {
+		background: #14131A; /* убрать кровь на экран меньше 768рх */
+	}
+	.venom {
+		top: 10%;
+	}
+}
+
+@media (max-width: 576px) {
+	.venom {
+		top: 15%;
+		width: 30%;
+	}
+	.nav-menu {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column; /* чтобы меню было в 1 колонку */
+		z-index: 9;
+		transform: translateX(100%); /* унес меню на 100% его ширины вправо */
+		transition: transform 0.2s; /* плавность трансформ, тоесть меню и кнопки */
+	}
+	.nav-menu-item {
+		margin-bottom: 2%;
+		margin-top: 2%;
+		margin-right: 0;
+	}
+	.nav-menu-link {
+		color: #14131A;
+	}
+	.nav {
+		margin-left: auto
+	}
+	.menu-close {
+		position: fixed;
+		opacity: 0;
+		right: 25px;
+		top: 65px;
+		display: flex;
+		align-items: center;
+		z-index: 10;
+		border: none;
+		background-color: #fff;
+		cursor: pointer;
+		transform: translateX(300%); /* унес кнопку закрыть на 300% его ширины вправо */
+		transition: transform 0.2s;
+		transition-delay: 0.4s; /* сначала появляется меню, потом кнопка закрыть */
+	}
+	.is-active {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+	.menu-close-text {
+		margin-right: 10px;
+	}
+	.menu-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		border: none;
+		background-color: #14131A;
+		cursor: pointer;
+		color: #fff;
+
+	}
+	.menu-button-text {
+		margin-right: 10px;
+	}
+	.button-group {
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		flex-direction: column; /* выстроить кнопки друг за другом */
+	}
+	.film-text {
+		text-align: center;
+	}
+	.poster-wrapper {
+		flex-direction: column;
+	}
+	.poster {
+		margin-bottom: 4%;
+		margin-top: -25%;
+	}
+	.content .trailer {
+		max-width: 350px;
+		width: 100%;
+	}
+	.poster {
+		margin-right: 0;
+		max-width: 350px;
+		width: 100%;
+	}
+	.column-2 {
+		column-count: 1;
+	}
+}
+
+@media (max-width: 1024px) {
+	.content {
+		flex-direction: column; 
+		padding-bottom: 5%;
+	}
+	.col {
+		margin-bottom: 5%;
+	}
+	.header {
+		margin-bottom: 4%;
+	}
+	.film {
+		margin-top: 20%;
+	}
 }
